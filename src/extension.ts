@@ -30,7 +30,10 @@ export function activate(context: vscode.ExtensionContext) {
 		const addr = vscode.workspace.getConfiguration().get('w2d.yourAddr');
 		if (name == "undefined" || addr == "undefined") { 
 			vscode.window.showErrorMessage("未配置姓名等...")
-		}   
+		}
+		else if (typeof(uri.path.split("/ics2017/")[1]) == "undefined") { 
+			vscode.window.showErrorMessage("这个不是PA~")
+		}  
 		else
 		{
 			var toAddr = name + "@" + addr + ":~/ics2017/" + uri.path.split("/ics2017/")[1]
@@ -51,6 +54,9 @@ export function activate(context: vscode.ExtensionContext) {
 		if (name == "undefined" || addr == "undefined") { 
 			vscode.window.showErrorMessage("未配置姓名等...")
 		}   
+		else if (typeof(uri.path.split("/ics2017/")[1]) == "undefined") { 
+			vscode.window.showErrorMessage("这个不是PA~")
+		}  
 		else
 		{
 			var toAddr = name + "@" + addr + ":~/ics2017/" + uri.path.split("/ics2017/")[1]
