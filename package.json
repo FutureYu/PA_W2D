@@ -2,7 +2,7 @@
 	"name": "pa-win2linux",
 	"displayName": "PA传送器",
 	"description": "Use this extension to write on Windows and copy file(s) to Debian",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "icon": "img/logo.png",
 	"engines": {
 		"vscode": "^1.33.0"

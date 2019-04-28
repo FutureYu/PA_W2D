@@ -18,6 +18,9 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ## [0.1.2]
 - fix .h file support
 
+## [0.1.3]
+- add support
+
 ## Todo
 
 - automaticly input password

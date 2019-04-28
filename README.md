@@ -1,6 +1,9 @@
-# pa-win2linux README
+# PA传送器
 
 此插件用来做 PA 时随时向虚拟机同步文件
+
+## 打赏支持
+![0](https://raw.githubusercontent.com/FutureYu/PA_W2D/master/img/0.png)
 
 ## Features
 
