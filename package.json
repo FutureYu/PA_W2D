@@ -15,7 +15,12 @@
 	"activationEvents": [
 		"onCommand:extension.w2d"
 	],
-	"main": "./out/extension.js",
+    "main": "./out/extension.js",
+    "homepage": "https://github.com/FutureYu/PA_W2D",
+    "repository": {
+		"type": "git",
+		"url": "https://github.com/FutureYu/PA_W2D"
+	},
 	"contributes": {
         "configuration": {
             "type": "object",

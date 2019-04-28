@@ -8,9 +8,12 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 - Initial release
 
-## [0.1]
+## [0.1.0]
 
 - add .h file support
+
+## [0.1.1]
+- fix pics
 
 ## Todo
 
