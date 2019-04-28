@@ -7,3 +7,13 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ## [Unreleased]
 
 - Initial release
+
+## [0.1]
+
+- add .h file support
+
+## Todo
+
+- automaticly input password
+- ask for info first time login
+

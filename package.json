@@ -2,7 +2,8 @@
 	"name": "pa-win2linux",
 	"displayName": "PA传送器",
 	"description": "Use this extension to write on Windows and copy file(s) to Debian",
-	"version": "0.0.1",
+    "version": "0.1.0",
+    "icon": "img/logo.png",
 	"engines": {
 		"vscode": "^1.33.0"
 	},
@@ -37,16 +38,12 @@
                 }
             }
         },
-
-
-
 		"commands": [
 			{
 				"command": "extension.w2d",
 				"title": "复制到Debian"
 			}
 		],
-
         "keybindings": [
             {
                 "command": "extension.w2d",
@@ -58,21 +55,21 @@
         "menus": {
             "editor/context": [
                 {
-                    "when": "editorFocus && resourceLangId == c",
+                    "when": "editorFocus && (resourceLangId == c || resourceLangId == h)",
                     "command": "extension.w2d",
                     "group": "6_navigation"
                 }
             ],
             "editor/title/context": [
                 {
-                    "when": "resourceLangId == c",
+                    "when": "resourceLangId == c || resourceLangId == h",
                     "command": "extension.w2d",
                     "group": "6_navigation"
                 }
             ],
             "explorer/context": [
                 {
-					"when": "resourceLangId == c",
+					"when": "resourceLangId == c || resourceLangId == h",
                     "command": "extension.w2d",
                     "group": "6_navigation"
                 }

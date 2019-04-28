@@ -11,12 +11,18 @@
 
 **首先，请在 Windows 中开启 ssh 功能：**
 1. windows 设置中点击应用
+![1](img/1.jpg)
 2. 在 “应用和功能” 菜单栏中选择 “管理可选功能”
+![2](img/2.jpg)
 3. 然后选择添加功能，将 OpenSSH 添加进来，等待安装......
+![3](img/3.jpg)
+
 
 **在设置页面配置好 姓名 与 IpAddr**
+![4](img/4.jpg)
 
 **请在 VSCode 中打开`/ics2017/`文件夹**
+![4](img/5.jpg)
 
 ## Extension Settings
 
