@@ -2,7 +2,7 @@
 	"name": "pa-win2linux",
 	"displayName": "PA传送器",
 	"description": "Use this extension to write on Windows and copy file(s) to Debian",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "icon": "img/logo.png",
 	"engines": {
 		"vscode": "^1.33.0"
@@ -35,11 +35,6 @@
                     "type": "string",
                     "default": "undefined",
                     "description": "虚拟机ipaddr"
-                },
-                "w2d.showTip": {
-                    "type": "boolean",
-                    "default": true,
-                    "description": "是否在每次启动时显示欢迎提示！"
                 }
             }
         },
@@ -54,27 +49,48 @@
                 "command": "extension.w2d",
                 "key": "ctrl+f10",
                 "mac": "cmd+f10",
-                "when": "editorTextFocus"
+                "when": "editorTextFocus && resourceLangId == c"
+            },
+            {
+                "command": "extension.w2d",
+                "key": "ctrl+f10",
+                "mac": "cmd+f10",
+                "when": "editorTextFocus && resourceLangId == cpp"
             }
         ],
         "menus": {
             "editor/context": [
                 {
-                    "when": "editorFocus && (resourceLangId == c || resourceLangId == h)",
+                    "when": "editorFocus && resourceLangId == c",
+                    "command": "extension.w2d",
+                    "group": "6_navigation"
+                },
+                {
+                    "when": "editorFocus && resourceLangId == cpp",
                     "command": "extension.w2d",
                     "group": "6_navigation"
                 }
             ],
             "editor/title/context": [
                 {
-                    "when": "resourceLangId == c || resourceLangId == h",
+                    "when": "resourceLangId == c",
+                    "command": "extension.w2d",
+                    "group": "6_navigation"
+                },
+                {
+                    "when": "resourceLangId == cpp",
                     "command": "extension.w2d",
                     "group": "6_navigation"
                 }
             ],
             "explorer/context": [
                 {
-					"when": "resourceLangId == c || resourceLangId == h",
+					"when": "resourceLangId == c",
+                    "command": "extension.w2d",
+                    "group": "6_navigation"
+                },
+                {
+					"when": "resourceLangId == cpp",
                     "command": "extension.w2d",
                     "group": "6_navigation"
                 }

@@ -15,6 +15,9 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ## [0.1.1]
 - fix pics
 
+## [0.1.2]
+- fix .h file support
+
 ## Todo
 
 - automaticly input password
