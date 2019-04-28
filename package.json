@@ -1,0 +1,97 @@
+{
+	"name": "pa-win2linux",
+	"displayName": "PA传送器",
+	"description": "Use this extension to write on Windows and copy file(s) to Debian",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.33.0"
+	},
+	"publisher": "FutureYu",
+	"keywords": ["ics", "PA", "ics2017", "nemu", "pa", "NUAA", "nuaa"],
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:extension.w2d"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+        "configuration": {
+            "type": "object",
+            "title": "Win2Deb",
+            "properties": {
+                "w2d.yourName": {
+                    "type": "string",
+                    "default": "undefined",
+                    "description": "虚拟机名字(姓名)"
+                },
+				"w2d.yourAddr": {
+                    "type": "string",
+                    "default": "undefined",
+                    "description": "虚拟机ipaddr"
+                },
+                "w2d.showTip": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "是否在每次启动时显示欢迎提示！"
+                }
+            }
+        },
+
+
+
+		"commands": [
+			{
+				"command": "extension.w2d",
+				"title": "复制到Debian"
+			}
+		],
+
+        "keybindings": [
+            {
+                "command": "extension.w2d",
+                "key": "ctrl+f10",
+                "mac": "cmd+f10",
+                "when": "editorTextFocus"
+            }
+        ],
+        "menus": {
+            "editor/context": [
+                {
+                    "when": "editorFocus && resourceLangId == c",
+                    "command": "extension.w2d",
+                    "group": "6_navigation"
+                }
+            ],
+            "editor/title/context": [
+                {
+                    "when": "resourceLangId == c",
+                    "command": "extension.w2d",
+                    "group": "6_navigation"
+                }
+            ],
+            "explorer/context": [
+                {
+					"when": "resourceLangId == c",
+                    "command": "extension.w2d",
+                    "group": "6_navigation"
+                }
+            ]
+        }
+		
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "npm run compile && node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"typescript": "^3.3.1",
+		"vscode": "^1.1.28",
+		"tslint": "^5.12.1",
+		"@types/node": "^10.12.21",
+		"@types/mocha": "^2.2.42"
+	}
+}
