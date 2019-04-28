@@ -27,6 +27,9 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ## [0.2.1]
 - detect PA folder
 
+## [0.3.0]
+- add save
+
 ## Todo
 
 - automaticly input password
