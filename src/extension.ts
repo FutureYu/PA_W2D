@@ -42,7 +42,25 @@ export function activate(context: vscode.ExtensionContext) {
 		}
 	}));
 
-	
+	context.subscriptions.push(vscode.commands.registerCommand('extension.d2w', (uri) => {
+		console.log(uri);
+		// /e:/Code/ics2017/nemu/src/cpu/decode/decode.c
+		// 如果没有设置，返回undefined
+		const name = vscode.workspace.getConfiguration().get('w2d.yourName');
+		const addr = vscode.workspace.getConfiguration().get('w2d.yourAddr');
+		if (name == "undefined" || addr == "undefined") { 
+			vscode.window.showErrorMessage("未配置姓名等...")
+		}   
+		else
+		{
+			var toAddr = name + "@" + addr + ":~/ics2017/" + uri.path.split("/ics2017/")[1]
+			var fromAddr = uri.path
+			vscode.window.showInformationMessage(`源文件路径是：${uri ? fromAddr : '空'}，目标文件路径是：${uri ? toAddr : '空'}`);
+			let terminal = vscode.window.createTerminal({ name: "scp" });
+			terminal.show(true);
+			terminal.sendText("scp " + toAddr + " " + fromAddr);
+		}
+	}));
 }
 
 // this method is called when your extension is deactivated

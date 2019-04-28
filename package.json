@@ -2,7 +2,7 @@
 	"name": "pa-win2linux",
 	"displayName": "PA传送器",
 	"description": "Use this extension to write on Windows and copy file(s) to Debian",
-    "version": "0.1.3",
+    "version": "0.2.0",
     "icon": "img/logo.png",
 	"engines": {
 		"vscode": "^1.33.0"
@@ -13,7 +13,8 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:extension.w2d"
+		"onCommand:extension.w2d",
+		"onCommand:extension.d2w"
 	],
     "main": "./out/extension.js",
     "homepage": "https://github.com/FutureYu/PA_W2D",
@@ -42,19 +43,35 @@
 			{
 				"command": "extension.w2d",
 				"title": "复制到Debian"
+            },
+            {
+				"command": "extension.d2w",
+				"title": "从Debian复制"
 			}
 		],
         "keybindings": [
             {
                 "command": "extension.w2d",
-                "key": "ctrl+f10",
-                "mac": "cmd+f10",
+                "key": "ctrl+f2",
+                "mac": "cmd+f2",
                 "when": "editorTextFocus && resourceLangId == c"
             },
             {
                 "command": "extension.w2d",
-                "key": "ctrl+f10",
-                "mac": "cmd+f10",
+                "key": "ctrl+f2",
+                "mac": "cmd+f2",
+                "when": "editorTextFocus && resourceLangId == cpp"
+            },
+            {
+                "command": "extension.d2w",
+                "key": "ctrl+f3",
+                "mac": "cmd+f3",
+                "when": "editorTextFocus && resourceLangId == c"
+            },
+            {
+                "command": "extension.d2w",
+                "key": "ctrl+f3",
+                "mac": "cmd+f3",
                 "when": "editorTextFocus && resourceLangId == cpp"
             }
         ],
@@ -69,6 +86,16 @@
                     "when": "editorFocus && resourceLangId == cpp",
                     "command": "extension.w2d",
                     "group": "6_navigation"
+                },
+                {
+                    "when": "editorFocus && resourceLangId == c",
+                    "command": "extension.d2w",
+                    "group": "6_navigation"
+                },
+                {
+                    "when": "editorFocus && resourceLangId == cpp",
+                    "command": "extension.d2w",
+                    "group": "6_navigation"
                 }
             ],
             "editor/title/context": [
@@ -81,6 +108,16 @@
                     "when": "resourceLangId == cpp",
                     "command": "extension.w2d",
                     "group": "6_navigation"
+                },
+                {
+                    "when": "resourceLangId == c",
+                    "command": "extension.d2w",
+                    "group": "6_navigation"
+                },
+                {
+                    "when": "resourceLangId == cpp",
+                    "command": "extension.d2w",
+                    "group": "6_navigation"
                 }
             ],
             "explorer/context": [
@@ -92,6 +129,16 @@
                 {
 					"when": "resourceLangId == cpp",
                     "command": "extension.w2d",
+                    "group": "6_navigation"
+                },
+                {
+                    "when": "resourceLangId == c",
+                    "command": "extension.d2w",
+                    "group": "6_navigation"
+                },
+                {
+                    "when": "resourceLangId == cpp",
+                    "command": "extension.d2w",
                     "group": "6_navigation"
                 }
             ]

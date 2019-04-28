@@ -21,6 +21,9 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ## [0.1.3]
 - add support
 
+## [0.2.0]
+- add debian to windows
+
 ## Todo
 
 - automaticly input password
